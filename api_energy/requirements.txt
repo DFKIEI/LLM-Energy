@@ -1,0 +1,12 @@
+transformers>=4.40.0
+accelerate>=0.30.0
+sentencepiece>=0.1.99
+safetensors>=0.4.2
+einops>=0.7.0
+huggingface_hub>=0.23.0
+tokenizers>=0.15.0
+carbontracker
+mistralai
+groq>=0.4.0
+openai
+google-genai

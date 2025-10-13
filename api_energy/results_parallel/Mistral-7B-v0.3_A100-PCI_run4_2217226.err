@@ -1,0 +1,11 @@
+Job 2217226: Running on node(s) serv-3315
+Job 2217226: Started at 2025-10-11 20:24:11+0200
+Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2217226&from=1760207051000
+Job 2217226: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
+Job 2217226: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh took 21.2 seconds
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /index/geocoder/
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]Fetching 3 files:  33%|███▎      | 1/3 [01:33<03:07, 93.85s/it]Fetching 3 files:  67%|██████▋   | 2/3 [01:34<00:39, 39.28s/it]Fetching 3 files: 100%|██████████| 3/3 [01:34<00:00, 31.64s/it]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:02,  1.03s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:02<00:01,  1.04s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:03<00:00,  1.01it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:03<00:00,  1.00s/it]

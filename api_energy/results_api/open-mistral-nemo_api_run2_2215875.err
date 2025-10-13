@@ -1,0 +1,7 @@
+Job 2215875: Running on node(s) kusel
+Job 2215875: Started at 2025-10-10 19:56:36+0200
+Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2215875&from=1760118996000
+Job 2215875: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
+Job 2215875: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh took 16.9 seconds
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.

@@ -1,0 +1,7 @@
+Job 2203514: Running on node(s) serv-9222
+Job 2203514: Started at 2025-10-05 01:50:58+0200
+Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2203514&from=1759621858000
+Job 2203514: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
+Job 2203514: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh took 19.6 seconds
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.

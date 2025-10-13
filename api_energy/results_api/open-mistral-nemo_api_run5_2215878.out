@@ -1,0 +1,2122 @@
+Looking in indexes: http://pypi-cache/index, https://pypi.ngc.nvidia.com
+Requirement already satisfied: pip in /usr/local/lib/python3.10/dist-packages (24.0)
+Collecting pip
+  Downloading http://pypi-cache/packages/b7/3f/945ef7ab14dc4f9d7f40288d2df998d1837ee0888ec3659c813487572faa/pip-25.2-py3-none-any.whl.metadata (4.7 kB)
+Downloading http://pypi-cache/packages/b7/3f/945ef7ab14dc4f9d7f40288d2df998d1837ee0888ec3659c813487572faa/pip-25.2-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 502.4 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+Successfully installed pip-25.2
+Looking in indexes: http://pypi-cache/index, https://pypi.ngc.nvidia.com
+Collecting transformers>=4.40.0 (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 1))
+  Downloading http://pypi-cache/packages/e5/2b/4d2708ac1ff5cd708b6548f4c5812d0ae40d1c28591c4c1c762b6dbdef2d/transformers-4.57.0-py3-none-any.whl.metadata (41 kB)
+Collecting accelerate>=0.30.0 (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 2))
+  Downloading http://pypi-cache/packages/5f/a0/d9ef19f780f319c21ee90ecfef4431cbeeca95bec7f14071785c17b6029b/accelerate-1.10.1-py3-none-any.whl.metadata (19 kB)
+Collecting sentencepiece>=0.1.99 (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 3))
+  Downloading http://pypi-cache/packages/c8/89/8deeafbba2871e8fa10f20f17447786f4ac38085925335728d360eaf4cae/sentencepiece-0.2.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+Collecting safetensors>=0.4.2 (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 4))
+  Downloading http://pypi-cache/packages/fe/5d/5a514d7b88e310c8b146e2404e0dc161282e78634d9358975fd56dfd14be/safetensors-0.6.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Requirement already satisfied: einops>=0.7.0 in /usr/local/lib/python3.10/dist-packages (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 5)) (0.7.0)
+Collecting einops>=0.7.0 (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 5))
+  Downloading http://pypi-cache/packages/87/62/9773de14fe6c45c23649e98b83231fffd7b9892b6cf863251dc2afa73643/einops-0.8.1-py3-none-any.whl.metadata (13 kB)
+Collecting huggingface_hub>=0.23.0 (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 6))
+  Downloading http://pypi-cache/packages/31/a0/651f93d154cb72323358bf2bbae3e642bdb5d2f1bfc874d096f7cb159fa0/huggingface_hub-0.35.3-py3-none-any.whl.metadata (14 kB)
+Collecting tokenizers>=0.15.0 (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 7))
+  Downloading http://pypi-cache/packages/d0/c6/dc3a0db5a6766416c32c034286d7c2d406da1f498e4de04ab1b8959edd00/tokenizers-0.22.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting carbontracker (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 8))
+  Downloading http://pypi-cache/packages/7b/e7/c5c3e8f001d5ad7ff88c83fbfbd5d5e76b29557cc54f24d9bbd90ae6ad84/carbontracker-2.3.1-py3-none-any.whl.metadata (12 kB)
+Collecting mistralai (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 9))
+  Downloading http://pypi-cache/packages/fe/76/4ce12563aea5a76016f8643eff30ab731e6656c845e9e4d090ef10c7b925/mistralai-1.9.11-py3-none-any.whl.metadata (39 kB)
+Collecting groq>=0.4.0 (from -r /home/banwari/llm_energy/api_energy/requirements.txt (line 10))
+  Downloading http://pypi-cache/packages/9d/08/24d62fccb01c4e86c59ba79073af7e5c8ab643846823c2fa3e957bde4b58/groq-0.32.0-py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1)) (3.13.1)
+Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1)) (1.24.4)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1)) (23.2)
+Requirement already satisfied: pyyaml>=5.1 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1)) (6.0.1)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1)) (2023.12.25)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1)) (2.31.0)
+Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1)) (4.66.1)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.23.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 6)) (2023.12.2)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.23.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 6)) (4.9.0)
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface_hub>=0.23.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 6))
+  Downloading http://pypi-cache/packages/15/07/86397573efefff941e100367bbda0b21496ffcdb34db7ab51912994c32a2/hf_xet-1.1.10-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.7 kB)
+Requirement already satisfied: psutil in /usr/local/lib/python3.10/dist-packages (from accelerate>=0.30.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 2)) (5.9.4)
+Requirement already satisfied: torch>=2.0.0 in /usr/local/lib/python3.10/dist-packages (from accelerate>=0.30.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 2)) (2.3.0a0+ebedce2)
+Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (from carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (1.5.3)
+Collecting geocoder (from carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8))
+  Downloading http://pypi-cache/packages/4f/6b/13166c909ad2f2d76b929a4227c952630ebaf0d729f6317eb09cbceccbab/geocoder-1.38.1-py2.py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: pynvml in /usr/local/lib/python3.10/dist-packages (from carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (11.4.1)
+Requirement already satisfied: importlib-metadata in /usr/local/lib/python3.10/dist-packages (from carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (7.0.1)
+Collecting py-cpuinfo (from carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8))
+  Downloading http://pypi-cache/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.10/dist-packages (from carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (3.8.2)
+Collecting seaborn (from carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8))
+  Downloading http://pypi-cache/packages/83/11/00d3c3dfc25ad54e731d91449895a79e4bf2384dc3ac01809010ba88f6d5/seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting reportlab<4.0.0 (from carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8))
+  Downloading http://pypi-cache/packages/d9/66/235944345eda71bac79a11890c38cc2f9eaa931a71c30f61c7d3fee2ace5/reportlab-3.6.13-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.2 kB)
+Requirement already satisfied: pillow>=9.0.0 in /usr/local/lib/python3.10/dist-packages (from reportlab<4.0.0->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (10.2.0)
+Collecting eval-type-backport>=0.2.0 (from mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9))
+  Downloading http://pypi-cache/packages/ce/31/55cd413eaccd39125368be33c46de24a1f639f2e12349b0361b4678f3915/eval_type_backport-0.2.2-py3-none-any.whl.metadata (2.2 kB)
+Collecting httpx>=0.28.1 (from mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9))
+  Downloading http://pypi-cache/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting invoke<3.0.0,>=2.2.0 (from mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9))
+  Downloading http://pypi-cache/packages/0a/66/7f8c48009c72d73bc6bbe6eb87ac838d6a526146f7dab14af671121eb379/invoke-2.2.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pydantic>=2.10.3 (from mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9))
+  Downloading http://pypi-cache/packages/f4/9d/d5c855424e2e5b6b626fbc6ec514d8e655a600377ce283008b115abb7445/pydantic-2.12.0-py3-none-any.whl.metadata (83 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.10/dist-packages (from mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9)) (2.8.2)
+Collecting pyyaml>=5.1 (from transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1))
+  Downloading http://pypi-cache/packages/7a/1e/7acc4f0e74c4b3d9531e24739e0ab832a5edf40e64fbae1a9c01941cabd7/pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting typing-inspection>=0.4.0 (from mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9))
+  Downloading http://pypi-cache/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting anyio<5,>=3.5.0 (from groq>=0.4.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 10))
+  Downloading http://pypi-cache/packages/15/b3/9b1a8074496371342ec1e796a96f99c82c945a339cd81a8e73de28b4cf9e/anyio-4.11.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting distro<2,>=1.7.0 (from groq>=0.4.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 10))
+  Downloading http://pypi-cache/packages/12/b3/231ffd4ab1fc9d679809f356cebee130ac7daa00d6d6f3206dd4fd137e9e/distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+Collecting sniffio (from groq>=0.4.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 10))
+  Downloading http://pypi-cache/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting typing-extensions>=3.7.4.3 (from huggingface_hub>=0.23.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 6))
+  Downloading http://pypi-cache/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /usr/local/lib/python3.10/dist-packages (from anyio<5,>=3.5.0->groq>=0.4.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 10)) (1.2.0)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.10/dist-packages (from anyio<5,>=3.5.0->groq>=0.4.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 10)) (3.6)
+Requirement already satisfied: certifi in /usr/local/lib/python3.10/dist-packages (from httpx>=0.28.1->mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9)) (2024.2.2)
+Collecting httpcore==1.* (from httpx>=0.28.1->mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9))
+  Downloading http://pypi-cache/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.28.1->mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9))
+  Downloading http://pypi-cache/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.10.3->mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9)) (0.6.0)
+Collecting pydantic-core==2.41.1 (from pydantic>=2.10.3->mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9))
+  Downloading http://pypi-cache/packages/53/25/cd47df3bfb24350e03835f0950288d1054f1cc9a8023401dabe6d4ff2834/pydantic_core-2.41.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.8.2->mistralai->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 9)) (1.16.0)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch>=2.0.0->accelerate>=0.30.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 2)) (1.12)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch>=2.0.0->accelerate>=0.30.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 2)) (2.6.3)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch>=2.0.0->accelerate>=0.30.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 2)) (3.1.3)
+Requirement already satisfied: click in /usr/local/lib/python3.10/dist-packages (from geocoder->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (8.1.7)
+Collecting future (from geocoder->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8))
+  Downloading http://pypi-cache/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting ratelim (from geocoder->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8))
+  Downloading http://pypi-cache/packages/f2/98/7e6d147fd16a10a5f821db6e25f192265d6ecca3d82957a4fdd592cad49c/ratelim-0.1.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.10/dist-packages (from importlib-metadata->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (3.17.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch>=2.0.0->accelerate>=0.30.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 2)) (2.1.4)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (1.2.0)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (4.48.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (1.4.5)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (3.1.1)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (2023.3.post1)
+Requirement already satisfied: decorator in /usr/local/lib/python3.10/dist-packages (from ratelim->geocoder->carbontracker->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 8)) (5.1.1)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1)) (3.3.2)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests->transformers>=4.40.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 1)) (1.26.18)
+Requirement already satisfied: mpmath>=0.19 in /usr/local/lib/python3.10/dist-packages (from sympy->torch>=2.0.0->accelerate>=0.30.0->-r /home/banwari/llm_energy/api_energy/requirements.txt (line 2)) (1.3.0)
+Downloading http://pypi-cache/packages/e5/2b/4d2708ac1ff5cd708b6548f4c5812d0ae40d1c28591c4c1c762b6dbdef2d/transformers-4.57.0-py3-none-any.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 575.0 MB/s  0:00:00
+Downloading http://pypi-cache/packages/31/a0/651f93d154cb72323358bf2bbae3e642bdb5d2f1bfc874d096f7cb159fa0/huggingface_hub-0.35.3-py3-none-any.whl (564 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 564.3/564.3 kB 758.8 MB/s  0:00:00
+Downloading http://pypi-cache/packages/d0/c6/dc3a0db5a6766416c32c034286d7c2d406da1f498e4de04ab1b8959edd00/tokenizers-0.22.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 713.8 MB/s  0:00:00
+Downloading http://pypi-cache/packages/15/07/86397573efefff941e100367bbda0b21496ffcdb34db7ab51912994c32a2/hf_xet-1.1.10-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 1.2 GB/s  0:00:00
+Downloading http://pypi-cache/packages/5f/a0/d9ef19f780f319c21ee90ecfef4431cbeeca95bec7f14071785c17b6029b/accelerate-1.10.1-py3-none-any.whl (374 kB)
+Downloading http://pypi-cache/packages/c8/89/8deeafbba2871e8fa10f20f17447786f4ac38085925335728d360eaf4cae/sentencepiece-0.2.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 1.1 GB/s  0:00:00
+Downloading http://pypi-cache/packages/fe/5d/5a514d7b88e310c8b146e2404e0dc161282e78634d9358975fd56dfd14be/safetensors-0.6.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (485 kB)
+Downloading http://pypi-cache/packages/87/62/9773de14fe6c45c23649e98b83231fffd7b9892b6cf863251dc2afa73643/einops-0.8.1-py3-none-any.whl (64 kB)
+Downloading http://pypi-cache/packages/7b/e7/c5c3e8f001d5ad7ff88c83fbfbd5d5e76b29557cc54f24d9bbd90ae6ad84/carbontracker-2.3.1-py3-none-any.whl (63 kB)
+Downloading http://pypi-cache/packages/d9/66/235944345eda71bac79a11890c38cc2f9eaa931a71c30f61c7d3fee2ace5/reportlab-3.6.13-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 1.0 GB/s  0:00:00
+Downloading http://pypi-cache/packages/fe/76/4ce12563aea5a76016f8643eff30ab731e6656c845e9e4d090ef10c7b925/mistralai-1.9.11-py3-none-any.whl (442 kB)
+Downloading http://pypi-cache/packages/0a/66/7f8c48009c72d73bc6bbe6eb87ac838d6a526146f7dab14af671121eb379/invoke-2.2.0-py3-none-any.whl (160 kB)
+Downloading http://pypi-cache/packages/7a/1e/7acc4f0e74c4b3d9531e24739e0ab832a5edf40e64fbae1a9c01941cabd7/pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (770 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 770.3/770.3 kB 1.1 GB/s  0:00:00
+Downloading http://pypi-cache/packages/9d/08/24d62fccb01c4e86c59ba79073af7e5c8ab643846823c2fa3e957bde4b58/groq-0.32.0-py3-none-any.whl (135 kB)
+Downloading http://pypi-cache/packages/15/b3/9b1a8074496371342ec1e796a96f99c82c945a339cd81a8e73de28b4cf9e/anyio-4.11.0-py3-none-any.whl (109 kB)
+Downloading http://pypi-cache/packages/12/b3/231ffd4ab1fc9d679809f356cebee130ac7daa00d6d6f3206dd4fd137e9e/distro-1.9.0-py3-none-any.whl (20 kB)
+Downloading http://pypi-cache/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl (73 kB)
+Downloading http://pypi-cache/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading http://pypi-cache/packages/f4/9d/d5c855424e2e5b6b626fbc6ec514d8e655a600377ce283008b115abb7445/pydantic-2.12.0-py3-none-any.whl (459 kB)
+Downloading http://pypi-cache/packages/53/25/cd47df3bfb24350e03835f0950288d1054f1cc9a8023401dabe6d4ff2834/pydantic_core-2.41.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 1.1 GB/s  0:00:00
+Downloading http://pypi-cache/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading http://pypi-cache/packages/ce/31/55cd413eaccd39125368be33c46de24a1f639f2e12349b0361b4678f3915/eval_type_backport-0.2.2-py3-none-any.whl (5.8 kB)
+Downloading http://pypi-cache/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading http://pypi-cache/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl (10 kB)
+Downloading http://pypi-cache/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading http://pypi-cache/packages/4f/6b/13166c909ad2f2d76b929a4227c952630ebaf0d729f6317eb09cbceccbab/geocoder-1.38.1-py2.py3-none-any.whl (98 kB)
+Downloading http://pypi-cache/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
+Downloading http://pypi-cache/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Downloading http://pypi-cache/packages/f2/98/7e6d147fd16a10a5f821db6e25f192265d6ecca3d82957a4fdd592cad49c/ratelim-0.1.6-py2.py3-none-any.whl (4.0 kB)
+Downloading http://pypi-cache/packages/83/11/00d3c3dfc25ad54e731d91449895a79e4bf2384dc3ac01809010ba88f6d5/seaborn-0.13.2-py3-none-any.whl (294 kB)
+Installing collected packages: py-cpuinfo, typing-extensions, sniffio, sentencepiece, safetensors, reportlab, ratelim, pyyaml, invoke, hf-xet, h11, future, eval-type-backport, einops, distro, typing-inspection, pydantic-core, huggingface_hub, httpcore, geocoder, anyio, tokenizers, seaborn, pydantic, httpx, accelerate, transformers, mistralai, groq, carbontracker
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.9.0
+    Uninstalling typing_extensions-4.9.0:
+      Successfully uninstalled typing_extensions-4.9.0
+  Attempting uninstall: pyyaml
+    Found existing installation: PyYAML 6.0.1
+    Uninstalling PyYAML-6.0.1:
+      Successfully uninstalled PyYAML-6.0.1
+  Attempting uninstall: einops
+    Found existing installation: einops 0.7.0
+    Uninstalling einops-0.7.0:
+      Successfully uninstalled einops-0.7.0
+  Attempting uninstall: pydantic-core
+    Found existing installation: pydantic_core 2.16.2
+    Uninstalling pydantic_core-2.16.2:
+      Successfully uninstalled pydantic_core-2.16.2
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.6.1
+    Uninstalling pydantic-2.6.1:
+      Successfully uninstalled pydantic-2.6.1
+
+Successfully installed accelerate-1.10.1 anyio-4.11.0 carbontracker-2.3.1 distro-1.9.0 einops-0.8.1 eval-type-backport-0.2.2 future-1.0.0 geocoder-1.38.1 groq-0.32.0 h11-0.16.0 hf-xet-1.1.10 httpcore-1.0.9 httpx-0.28.1 huggingface_hub-0.35.3 invoke-2.2.0 mistralai-1.9.11 py-cpuinfo-9.0.0 pydantic-2.12.0 pydantic-core-2.41.1 pyyaml-6.0.3 ratelim-0.1.6 reportlab-3.6.13 safetensors-0.6.2 seaborn-0.13.2 sentencepiece-0.2.1 sniffio-1.3.1 tokenizers-0.22.1 transformers-4.57.0 typing-extensions-4.15.0 typing-inspection-0.4.2
+transformers: 4.57.0
+tokenizers: 0.22.1
+sentencepiece: 0.2.1
+safetensors: 0.6.2
+Successfully patched carbontracker device handling
+Warning: 'open-mistral-nemo' not in known API models: {'codestral-latest', 'mistral-large-latest', 'mistral-small-latest', 'mistral-medium-latest', 'open-mistral-7b', 'open-mixtral-8x7b'}
+Proceeding anyway, but verify the model name is correct.
+Initialized Mistral API client for model: open-mistral-nemo
+Loaded 100 queries from CSV
+Processing with per-sample carbon tracking...
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+
+[Sample 1/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 8.13s
+  Tokens - Input: 35, Output: 771, Total: 806
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_1/)
+
+[Sample 2/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.24s
+  Tokens - Input: 35, Output: 901, Total: 936
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_2/)
+
+[Sample 3/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.02s
+  Tokens - Input: 35, Output: 662, Total: 697
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_3/)
+
+[Sample 4/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 23.49s
+  Tokens - Input: 129, Output: 2048, Total: 2177
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_4/)
+
+[Sample 5/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 38.94s
+  Tokens - Input: 124, Output: 2800, Total: 2924
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_5/)
+
+[Sample 6/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.21s
+  Tokens - Input: 34, Output: 705, Total: 739
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_6/)
+
+[Sample 7/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.09s
+  Tokens - Input: 41, Output: 689, Total: 730
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_7/)
+
+[Sample 8/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 28.25s
+  Tokens - Input: 137, Output: 2048, Total: 2185
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_8/)
+
+[Sample 9/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 8.03s
+  Tokens - Input: 42, Output: 882, Total: 924
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_9/)
+
+[Sample 10/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.06s
+  Tokens - Input: 42, Output: 714, Total: 756
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_10/)
+
+[Sample 11/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 10.33s
+  Tokens - Input: 42, Output: 683, Total: 725
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_11/)
+
+[Sample 12/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 40.27s
+  Tokens - Input: 132, Output: 8192, Total: 8324
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_12/)
+
+[Sample 13/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 8.83s
+  Tokens - Input: 44, Output: 832, Total: 876
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_13/)
+
+[Sample 14/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 8.23s
+  Tokens - Input: 40, Output: 646, Total: 686
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_14/)
+
+[Sample 15/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 8.27s
+  Tokens - Input: 44, Output: 780, Total: 824
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_15/)
+
+[Sample 16/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 9.24s
+  Tokens - Input: 40, Output: 790, Total: 830
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_16/)
+
+[Sample 17/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 21.57s
+  Tokens - Input: 133, Output: 2361, Total: 2494
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_17/)
+
+[Sample 18/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.68s
+  Tokens - Input: 38, Output: 869, Total: 907
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_18/)
+
+[Sample 19/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 16.92s
+  Tokens - Input: 139, Output: 1871, Total: 2010
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_19/)
+
+[Sample 20/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 8.31s
+  Tokens - Input: 33, Output: 723, Total: 756
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_20/)
+
+[Sample 21/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.21s
+  Tokens - Input: 32, Output: 634, Total: 666
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_21/)
+
+[Sample 22/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 22.43s
+  Tokens - Input: 130, Output: 2048, Total: 2178
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_22/)
+
+[Sample 23/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 19.95s
+  Tokens - Input: 115, Output: 3065, Total: 3180
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_23/)
+
+[Sample 24/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.12s
+  Tokens - Input: 35, Output: 673, Total: 708
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_24/)
+
+[Sample 25/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.51s
+  Tokens - Input: 44, Output: 766, Total: 810
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_25/)
+
+[Sample 26/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 4.35s
+  Tokens - Input: 41, Output: 631, Total: 672
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_26/)
+
+[Sample 27/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 4.22s
+  Tokens - Input: 34, Output: 627, Total: 661
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_27/)
+
+[Sample 28/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 32.21s
+  Tokens - Input: 137, Output: 3002, Total: 3139
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_28/)
+
+[Sample 29/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 9.69s
+  Tokens - Input: 42, Output: 618, Total: 660
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_29/)
+
+[Sample 30/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.48s
+  Tokens - Input: 34, Output: 780, Total: 814
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_30/)
+
+[Sample 31/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.18s
+  Tokens - Input: 34, Output: 554, Total: 588
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_31/)
+
+[Sample 32/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.29s
+  Tokens - Input: 40, Output: 963, Total: 1003
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_32/)
+
+[Sample 33/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 14.74s
+  Tokens - Input: 120, Output: 1847, Total: 1967
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_33/)
+
+[Sample 34/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 19.42s
+  Tokens - Input: 126, Output: 2048, Total: 2174
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_34/)
+
+[Sample 35/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 17.44s
+  Tokens - Input: 117, Output: 2048, Total: 2165
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_35/)
+
+[Sample 36/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 20.22s
+  Tokens - Input: 123, Output: 1968, Total: 2091
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_36/)
+
+[Sample 37/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 15.28s
+  Tokens - Input: 129, Output: 2048, Total: 2177
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_37/)
+
+[Sample 38/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 12.72s
+  Tokens - Input: 132, Output: 2048, Total: 2180
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_38/)
+
+[Sample 39/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 25.81s
+  Tokens - Input: 118, Output: 3890, Total: 4008
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_39/)
+
+[Sample 40/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 8.39s
+  Tokens - Input: 32, Output: 702, Total: 734
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_40/)
+
+[Sample 41/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 4.76s
+  Tokens - Input: 33, Output: 788, Total: 821
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_41/)
+
+[Sample 42/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.32s
+  Tokens - Input: 33, Output: 768, Total: 801
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_42/)
+
+[Sample 43/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 10.69s
+  Tokens - Input: 130, Output: 1568, Total: 1698
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_43/)
+
+[Sample 44/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 21.93s
+  Tokens - Input: 121, Output: 2724, Total: 2845
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_44/)
+
+[Sample 45/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.06s
+  Tokens - Input: 41, Output: 741, Total: 782
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_45/)
+
+[Sample 46/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 6.68s
+  Tokens - Input: 42, Output: 739, Total: 781
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_46/)
+
+[Sample 47/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 6.30s
+  Tokens - Input: 35, Output: 717, Total: 752
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_47/)
+
+[Sample 48/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 14.74s
+  Tokens - Input: 118, Output: 2246, Total: 2364
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_48/)
+
+[Sample 49/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 12.49s
+  Tokens - Input: 138, Output: 2048, Total: 2186
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_49/)
+
+[Sample 50/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 4.98s
+  Tokens - Input: 33, Output: 733, Total: 766
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_50/)
+
+[Sample 51/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 20.82s
+  Tokens - Input: 115, Output: 2048, Total: 2163
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_51/)
+
+[Sample 52/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 4.11s
+  Tokens - Input: 33, Output: 511, Total: 544
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_52/)
+
+[Sample 53/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 6.55s
+  Tokens - Input: 41, Output: 764, Total: 805
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_53/)
+
+[Sample 54/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.40s
+  Tokens - Input: 41, Output: 665, Total: 706
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_54/)
+
+[Sample 55/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 8.17s
+  Tokens - Input: 40, Output: 823, Total: 863
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_55/)
+
+[Sample 56/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 16.55s
+  Tokens - Input: 115, Output: 2581, Total: 2696
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_56/)
+
+[Sample 57/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 40.93s
+  Tokens - Input: 127, Output: 3434, Total: 3561
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_57/)
+
+[Sample 58/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 19.91s
+  Tokens - Input: 126, Output: 2283, Total: 2409
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_58/)
+
+[Sample 59/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 11.92s
+  Tokens - Input: 142, Output: 2048, Total: 2190
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_59/)
+
+[Sample 60/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 27.40s
+  Tokens - Input: 126, Output: 2940, Total: 3066
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_60/)
+
+[Sample 61/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.76s
+  Tokens - Input: 33, Output: 686, Total: 719
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_61/)
+
+[Sample 62/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 4.00s
+  Tokens - Input: 33, Output: 583, Total: 616
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_62/)
+
+[Sample 63/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 16.48s
+  Tokens - Input: 126, Output: 2048, Total: 2174
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_63/)
+
+[Sample 64/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.16s
+  Tokens - Input: 34, Output: 622, Total: 656
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_64/)
+
+[Sample 65/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 4.72s
+  Tokens - Input: 34, Output: 746, Total: 780
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_65/)
+
+[Sample 66/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 39.71s
+  Tokens - Input: 126, Output: 8192, Total: 8318
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_66/)
+
+[Sample 67/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 4.63s
+  Tokens - Input: 44, Output: 745, Total: 789
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_67/)
+
+[Sample 68/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 26.87s
+  Tokens - Input: 118, Output: 2402, Total: 2520
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_68/)
+
+[Sample 69/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 25.47s
+  Tokens - Input: 116, Output: 3167, Total: 3283
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_69/)
+
+[Sample 70/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 26.03s
+  Tokens - Input: 114, Output: 3663, Total: 3777
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_70/)
+
+[Sample 71/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 29.34s
+  Tokens - Input: 114, Output: 2916, Total: 3030
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_71/)
+
+[Sample 72/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 14.58s
+  Tokens - Input: 130, Output: 2000, Total: 2130
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_72/)
+
+[Sample 73/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 18.40s
+  Tokens - Input: 141, Output: 2048, Total: 2189
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_73/)
+
+[Sample 74/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.74s
+  Tokens - Input: 41, Output: 716, Total: 757
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_74/)
+
+[Sample 75/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 14.15s
+  Tokens - Input: 141, Output: 2048, Total: 2189
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_75/)
+
+[Sample 76/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 15.04s
+  Tokens - Input: 116, Output: 2048, Total: 2164
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_76/)
+
+[Sample 77/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 4.09s
+  Tokens - Input: 35, Output: 540, Total: 575
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_77/)
+
+[Sample 78/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 29.07s
+  Tokens - Input: 123, Output: 3947, Total: 4070
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_78/)
+
+[Sample 79/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 6.66s
+  Tokens - Input: 38, Output: 876, Total: 914
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_79/)
+
+[Sample 80/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 6.02s
+  Tokens - Input: 44, Output: 810, Total: 854
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_80/)
+
+[Sample 81/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 17.58s
+  Tokens - Input: 115, Output: 2357, Total: 2472
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_81/)
+
+[Sample 82/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.58s
+  Tokens - Input: 32, Output: 627, Total: 659
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_82/)
+
+[Sample 83/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 33.36s
+  Tokens - Input: 132, Output: 4970, Total: 5102
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_83/)
+
+[Sample 84/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 14.53s
+  Tokens - Input: 119, Output: 2174, Total: 2293
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_84/)
+
+[Sample 85/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 42.08s
+  Tokens - Input: 122, Output: 5909, Total: 6031
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_85/)
+
+[Sample 86/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.33s
+  Tokens - Input: 42, Output: 779, Total: 821
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_86/)
+
+[Sample 87/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.86s
+  Tokens - Input: 43, Output: 772, Total: 815
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_87/)
+
+[Sample 88/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.14s
+  Tokens - Input: 41, Output: 815, Total: 856
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_88/)
+
+[Sample 89/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 14.60s
+  Tokens - Input: 123, Output: 2012, Total: 2135
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_89/)
+
+[Sample 90/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 3.45s
+  Tokens - Input: 42, Output: 507, Total: 549
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_90/)
+
+[Sample 91/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 5.84s
+  Tokens - Input: 41, Output: 679, Total: 720
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_91/)
+
+[Sample 92/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 24.72s
+  Tokens - Input: 139, Output: 4372, Total: 4511
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_92/)
+
+[Sample 93/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 15.31s
+  Tokens - Input: 135, Output: 2294, Total: 2429
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_93/)
+
+[Sample 94/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 13.31s
+  Tokens - Input: 121, Output: 2069, Total: 2190
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_94/)
+
+[Sample 95/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 11.17s
+  Tokens - Input: 139, Output: 1744, Total: 1883
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_95/)
+
+[Sample 96/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 14.04s
+  Tokens - Input: 114, Output: 2048, Total: 2162
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_96/)
+
+[Sample 97/100] Processing: long query, short output
+  Max input tokens: 8192, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 13.64s
+  Tokens - Input: 128, Output: 2048, Total: 2176
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_97/)
+
+[Sample 98/100] Processing: short query, short output
+  Max input tokens: 2048, Max output tokens: 2048
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 7.81s
+  Tokens - Input: 33, Output: 1191, Total: 1224
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_98/)
+
+[Sample 99/100] Processing: short query, long output
+  Max input tokens: 2048, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 3.63s
+  Tokens - Input: 33, Output: 576, Total: 609
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_99/)
+
+[Sample 100/100] Processing: long query, long output
+  Max input tokens: 8192, Max output tokens: 8192
+The following components were found: CPU with device(s) cpu:1, dram:0, cpu:0, dram:1.
+CarbonTracker: CRITICAL - Could not read CPU/DRAM energy consumption due to lack of read-permissions.
+	Please run the following command(s): 
+		sudo chmod +r /sys/class/powercap/intel-rapl:1/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:0/energy_uj
+		sudo chmod +r /sys/class/powercap/intel-rapl:1:0/energy_uj
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  ✓ Completed in 19.78s
+  Tokens - Input: 138, Output: 2846, Total: 2984
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+  Carbon tracking completed (see carbon_logs_sample_100/)
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: Live carbon intensity could not be fetched at detected location: Kaiserslautern, Rheinland-Pfalz, DE. Defaulted to average carbon intensity for DE in 2023 of 380.95 gCO2/kWh. at detected location: Kaiserslautern, Rheinland-Pfalz, DE.
+CarbonTracker: 
+Predicted consumption for 1 epoch(s):
+	Time:	0:23:39
+	Energy:	0.000000000000 kWh
+	CO2eq:	0.000000000000 g
+	This is equivalent to:
+	0.000000000000 km travelled by car
+CarbonTracker: WARNING - ElectricityMaps API key not set. Will default to average carbon intensity.
+CarbonTracker: WARNING - Failed to retrieve carbon intensity: Defaulting to average carbon intensity 380.95047 gCO2/kWh.
+CarbonTracker: Average carbon intensity during training was 380.95 gCO2/kWh at detected location: Kaiserslautern, Rheinland-Pfalz, DE.
+CarbonTracker: 
+Actual consumption for 0 epoch(s):
+	Time:	0:23:39
+	Energy:	0.000000000000 kWh
+	CO2eq:	0.000000000000 g
+	This is equivalent to:
+	0.000000000000 km travelled by car
+CarbonTracker: Finished monitoring.
+
+Overall carbon tracking completed (see carbon_logs_overall/)
+
+Done. Wrote: /home/banwari/llm_energy/api_energy/results_api/open-mistral-nemo_api_run5_output.csv
+Total samples processed: 100
+Per-sample carbon logs: ./carbon_logs_sample_*/
+Overall carbon logs: ./carbon_logs_overall/
