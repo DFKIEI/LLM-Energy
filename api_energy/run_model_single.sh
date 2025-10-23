@@ -19,7 +19,7 @@ srun -K \
            python $(pwd)/mistral_models_parallelism.py \
              --model mistralai/Mistral-7B-Instruct-v0.3 \
              --csv /netscratch/banwari/api_gpu/synthetic_prompts.csv \
-             --hf_token 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 \
+             --hf_token HF_TOKEN \
              --temperature 0.7 \
              --max_samples 100 \
              --max_input_tokens_short 2048 \

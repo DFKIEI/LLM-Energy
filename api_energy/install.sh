@@ -7,7 +7,7 @@ export HF_HUB_DISABLE_TELEMETRY=1
 mkdir -p "$HF_HOME"
 
 python -m pip install --upgrade pip
-pip install --upgrade --no-cache-dir -r /home/banwari/llm_energy/api_energy/requirements.txt
+pip install --upgrade --no-cache-dir -r /home/banwari/llm_energy/LLM-Energy/api_energy/requirements.txt
 
 # Optional: login if private models (set HF_TOKEN or HUGGINGFACE_HUB_TOKEN)
 if [[ -n "${HF_TOKEN:-${HUGGINGFACE_HUB_TOKEN:-}}" ]]; then

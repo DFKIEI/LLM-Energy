@@ -1,5 +1,5 @@
 #!/bin/bash
-# filepath: /home/banwari/llm_energy/api_energy/run_model_parallel_all.sh
+# filepath: /home/banwari/llm_energy/LLM-Energy/api_energy/run_model_parallel_all.sh
 
 # Define all ACTUALLY AVAILABLE models on HuggingFace
 
@@ -33,10 +33,10 @@ GPUS=(
 )
 
 # Number of runs per configuration
-NUM_RUNS=5
+NUM_RUNS=1
 
 # HuggingFace token
-HF_TOKEN="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"
+HF_TOKEN="HF_TOKEN"
 
 # CSV file path
 CSV_PATH="/netscratch/banwari/api_gpu/synthetic_prompts.csv"
@@ -76,7 +76,7 @@ GPU_TIME["H200-PCI"]=180
 GPU_TIME["RTXA6000"]=300
 
 # Create output directory
-OUTPUT_DIR="$(pwd)/results_parallel"
+OUTPUT_DIR="$(pwd)/results_parallel_tokens"
 mkdir -p "$OUTPUT_DIR"
 
 # Log file for all jobs
@@ -97,7 +97,7 @@ for model in "${MODELS[@]}"; do
         mem="${GPU_MEM[$gpu]}GB"
         time_limit="${GPU_TIME[$gpu]}"
         
-        for run in $(seq 2 $NUM_RUNS); do
+        for run in $(seq 1 $NUM_RUNS); do
             TOTAL_JOBS=$((TOTAL_JOBS + 1))
             
             # Create unique job name

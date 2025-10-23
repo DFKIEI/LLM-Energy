@@ -37,7 +37,7 @@ srun -K \
       $CURRENT_DIR/mistral_models_multi_gpu.py \
       --model mistralai/Mistral-7B-Instruct-v0.2 \
       --csv /netscratch/banwari/api_gpu/synthetic_prompts.csv \
-      --hf_token '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' \
+      --hf_token 'HF_TOKEN' \
       --temperature 0.7 \
       --max_samples 500 \
       --seed 42 \

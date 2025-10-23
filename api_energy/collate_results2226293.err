@@ -1,0 +1,10 @@
+Job 2226293: Running on node(s) kersey
+Job 2226293: Started at 2025-10-16 00:57:12+0200
+Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2226293&from=1760569032000
+Job 2226293: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
+Job 2226293: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh took 62.5 seconds
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Local Mistral:   0%|          | 0/140 [00:00<?, ?it/s]Local Mistral:  44%|████▍     | 62/140 [00:00<00:00, 617.67it/s]Local Mistral:  89%|████████▉ | 125/140 [00:00<00:00, 623.69it/s]Local Mistral: 100%|██████████| 140/140 [00:00<00:00, 623.61it/s]
+Mistral API:   0%|          | 0/15 [00:00<?, ?it/s]Mistral API: 100%|██████████| 15/15 [00:00<00:00, 202.76it/s]
+OpenAI API:   0%|          | 0/20 [00:00<?, ?it/s]OpenAI API: 100%|██████████| 20/20 [00:00<00:00, 684.05it/s]

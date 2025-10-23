@@ -15,7 +15,7 @@ srun -K \
            python /home/banwari/llm_energy/api_energy/mistral_models_api.py \
              --model open-mistral-7b \
              --csv /netscratch/banwari/api_gpu/synthetic_prompts.csv \
-             --api_key 9ZxEWrXV1qF65bILI50KyjbrhNfog1JX \
+             --api_key API_KEY \
              --temperature 0.7 \
              --out_csv outputs_larger_api200_ind.csv \
              --max_samples 200"

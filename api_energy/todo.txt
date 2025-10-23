@@ -1,0 +1,20 @@
+Local - 
+
+h100-200
+10 runs
+
+repeat with microsoft phi models(where equivalent with API)
+
+find some more models(where equivalent API available)
+
+Local - Llama3.1-8b(https://huggingface.co/meta-llama/Llama-3.1-8B), llama guard4 - 12b(https://huggingface.co/meta-llama/Llama-Guard-4-12B) 
+
+API - 
+
+track the amount of inputs, output and total tokens for both local and API models
+
+
+
+-----------------------------------------
+
+and figure out the tokenizers used(API)

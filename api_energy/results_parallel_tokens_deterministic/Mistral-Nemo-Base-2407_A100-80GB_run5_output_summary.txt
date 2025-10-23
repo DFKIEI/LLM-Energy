@@ -1,0 +1,23 @@
+======================================================================
+OVERALL RUN STATISTICS
+======================================================================
+Total Queries Processed: 100
+Total Input Tokens: 8,197
+Total Output Tokens: 332,324
+Total Tokens: 340,521
+Avg Input Tokens/Query: 82.0
+Avg Output Tokens/Query: 3323.2
+Avg Total Tokens/Query: 3405.2
+
+Query Type Distribution:
+  Short: 48 (48.0%)
+  Long: 52 (52.0%)
+
+Output Type Distribution:
+  Short: 55 (55.0%)
+  Long: 45 (45.0%)
+
+Benchmark:
+Total time: 3789.35s
+Throughput: 0.03 queries/sec
+Token throughput: 89.9 tokens/sec

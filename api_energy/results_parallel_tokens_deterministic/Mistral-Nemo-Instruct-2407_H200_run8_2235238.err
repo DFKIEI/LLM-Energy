@@ -1,0 +1,12 @@
+Job 2235238: Running on node(s) serv-3346
+Job 2235238: Started at 2025-10-22 21:06:58+0200
+Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2235238&from=1761160018000
+Job 2235238: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
+Job 2235238: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh took 14.4 seconds
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+`torch_dtype` is deprecated! Use `dtype` instead!
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: b688fed5-6dfb-46e1-a97b-0fdb0995924a)')' thrown while requesting HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-Nemo-Instruct-2407/04d8a90549d23fc6bd7f642064003592df51e9b3/model.safetensors.index.json
+Retrying in 1s [Retry 1/5].
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  20%|██        | 1/5 [01:21<05:27, 81.99s/it]Fetching 5 files:  40%|████      | 2/5 [01:22<01:41, 33.96s/it]Fetching 5 files: 100%|██████████| 5/5 [01:22<00:00, 16.47s/it]
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:03,  1.15it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:01<00:02,  1.14it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:02<00:01,  1.14it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:03<00:00,  1.14it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:04<00:00,  1.15it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:04<00:00,  1.14it/s]

@@ -29,7 +29,7 @@ MODEL_CONFIGS["mistralai/Codestral-22B-v0.1"]="22B,80GB,32k"
 NUM_RUNS=1  # Number of runs per partition per model
 MAX_SAMPLES=100  # Reduced for multiple model testing
 CSV_PATH="/netscratch/banwari/api_gpu/synthetic_prompts.csv"
-HF_TOKEN="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"
+HF_TOKEN="HF_TOKEN"
 CURRENT_DIR=$(pwd)
 
 echo "Submitting $NUM_RUNS runs for ${#MODELS[@]} models across ${#GPU_PARTITIONS[@]} GPU partitions..."

@@ -1,0 +1,13 @@
+Job 2223749: Running on node(s) kusel
+Job 2223749: Started at 2025-10-14 17:46:59+0200
+Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2223749&from=1760456819000
+Job 2223749: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
+slurmstepd: error: pyxis: child 3315148 failed with error code: 137
+slurmstepd: error: pyxis: failed to create container filesystem
+slurmstepd: error: pyxis: printing enroot log file:
+slurmstepd: error: pyxis:     [INFO] Extracting squashfs filesystem...
+slurmstepd: error: pyxis:     /usr/lib/enroot/runtime.sh: line 384: 3315175 Killed                  unsquashfs ${TTY_OFF+-no-progress} -processors "${ENROOT_MAX_PROCESSORS}" -user-xattrs -d "${rootfs}" "${image}" 1>&2
+slurmstepd: error: pyxis: couldn't start container
+slurmstepd: error: spank: required plugin spank_pyxis.so: task_init() failed with rc=-1
+slurmstepd: error: Failed to invoke spank plugin stack
+slurmstepd: error: Detected 1 oom_kill event in StepId=2223749.0. Some of the step tasks have been OOM Killed.
