@@ -1,31 +1,18 @@
 #!/bin/bash
-# filepath: /home/banwari/llm_energy/LLM-Energy/api_energy/run_model_parallel_all.sh
+# filepath: /home/banwari/llm_energy/LLM-Energy/api_energy/run_model_llama_parallel_deterministic_all.sh
 
-# Define all ACTUALLY AVAILABLE models on HuggingFace
+# Define Llama models
+MODELS=(
+    "meta-llama/Llama-3.1-8B"
+)
 
 #MODELS=(
-#    "mistralai/Mistral-7B-v0.3"
-#    "mistralai/Mistral-7B-Instruct-v0.3"
-#    "mistralai/Mistral-Nemo-Base-2407"
-#    "mistralai/Mistral-Nemo-Instruct-2407"
-#    "mistralai/Pixtral-12B-2409"
-#    "mistralai/Mistral-Small-Instruct-2409"
-#    "mistralai/Ministral-8B-Instruct-2410"
-#    "mistralai/Ministral-3B-Instruct-2410"
+#    "meta-llama/Llama-3.1-8B"
+#    "meta-llama/Llama-Guard-4-12B"
 #)
-
-MODELS=(
-    "mistralai/Mistral-7B-v0.3"
-    "mistralai/Mistral-7B-Instruct-v0.3"
-    "mistralai/Mistral-Nemo-Base-2407"
-    "mistralai/Mistral-Nemo-Instruct-2407"
-)
 
 # Define all GPU partitions
 GPUS=(
-    "A100-40GB"
-    "A100-80GB"
-    "A100-PCI"
     "H100"
     "H100-PCI"
     "H200"
@@ -34,7 +21,7 @@ GPUS=(
 # Number of runs per configuration
 NUM_RUNS=10
 
-# HuggingFace token
+# HuggingFace token (required for Llama models - they are gated)
 HF_TOKEN="HF_TOKEN"
 
 # CSV file path
@@ -50,37 +37,29 @@ MAX_OUTPUT_LONG=8192
 TEMPERATURE=0.7
 SEED=42
 
-# Memory requirements per GPU type
+# Memory requirements per GPU type (Llama models need more memory)
 declare -A GPU_MEM
-GPU_MEM["A100-40GB"]=60
-GPU_MEM["A100-80GB"]=70
-GPU_MEM["A100-PCI"]=60
-GPU_MEM["B200"]=100
-GPU_MEM["H100"]=80
-GPU_MEM["H100-PCI"]=80
-GPU_MEM["H200"]=80
-GPU_MEM["H200-PCI"]=80
-GPU_MEM["RTXA6000"]=60
+GPU_MEM["H100"]=90
+GPU_MEM["H100-PCI"]=90
+GPU_MEM["H200"]=100
 
 # Time limits per GPU type (in minutes)
 declare -A GPU_TIME
-GPU_TIME["A100-40GB"]=240
-GPU_TIME["A100-80GB"]=240
-GPU_TIME["A100-PCI"]=240
-GPU_TIME["B200"]=180
-GPU_TIME["H100"]=180
-GPU_TIME["H100-PCI"]=180
-GPU_TIME["H200"]=180
-GPU_TIME["H200-PCI"]=180
-GPU_TIME["RTXA6000"]=300
+GPU_TIME["H100"]=240
+GPU_TIME["H100-PCI"]=240
+GPU_TIME["H200"]=240
 
 # Create output directory
-OUTPUT_DIR="$(pwd)/results_parallel_tokens_fixed_deterministic"
+OUTPUT_DIR="$(pwd)/results_llama_parallel_tokens_deterministic_fixed"
 mkdir -p "$OUTPUT_DIR"
 
 # Log file for all jobs
 LOG_FILE="$OUTPUT_DIR/all_jobs.log"
-echo "Starting batch job submission at $(date)" > "$LOG_FILE"
+echo "Starting Llama batch job submission at $(date)" > "$LOG_FILE"
+echo "Models: ${MODELS[@]}" >> "$LOG_FILE"
+echo "GPUs: ${GPUS[@]}" >> "$LOG_FILE"
+echo "Runs per config: $NUM_RUNS" >> "$LOG_FILE"
+echo "" >> "$LOG_FILE"
 
 # Counter for total jobs
 TOTAL_JOBS=0
@@ -108,6 +87,8 @@ for model in "${MODELS[@]}"; do
             csv_out="$OUTPUT_DIR/${job_name}_output.csv"
             
             echo "Submitting job $TOTAL_JOBS: $job_name" | tee -a "$LOG_FILE"
+            echo "  Model: $model" | tee -a "$LOG_FILE"
+            echo "  GPU: $gpu (${mem}, ${time_limit}min)" | tee -a "$LOG_FILE"
             
             # Submit job
             srun -K \
@@ -125,7 +106,7 @@ for model in "${MODELS[@]}"; do
               --container-workdir="$(pwd)" \
               bash -c "chmod +x $(pwd)/install.sh && \
                        $(pwd)/install.sh && \
-                       python $(pwd)/mistral_models_parallelism_consistent.py \
+                       python $(pwd)/llama_models_parallelism_consistent.py \
                          --model $model \
                          --csv $CSV_PATH \
                          --hf_token $HF_TOKEN \
@@ -157,8 +138,14 @@ done
 wait
 
 echo "" | tee -a "$LOG_FILE"
-echo "All $TOTAL_JOBS jobs submitted at $(date)" | tee -a "$LOG_FILE"
+echo "All $TOTAL_JOBS Llama jobs submitted at $(date)" | tee -a "$LOG_FILE"
 echo "Results will be saved to: $OUTPUT_DIR" | tee -a "$LOG_FILE"
 echo "" | tee -a "$LOG_FILE"
-echo "To monitor jobs, run: squeue -u $USER" | tee -a "$LOG_FILE"
+echo "To monitor jobs, run: squeue -u $USER | grep Llama" | tee -a "$LOG_FILE"
 echo "To check results: ls -lh $OUTPUT_DIR/*.csv" | tee -a "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "Summary:" | tee -a "$LOG_FILE"
+echo "  Models: 2 (Llama-3.1-8B, Llama-Guard-4-12B)" | tee -a "$LOG_FILE"
+echo "  GPUs: ${#GPUS[@]} (${GPUS[*]})" | tee -a "$LOG_FILE"
+echo "  Runs per config: $NUM_RUNS" | tee -a "$LOG_FILE"
+echo "  Total jobs: $TOTAL_JOBS" | tee -a "$LOG_FILE"

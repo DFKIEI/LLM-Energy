@@ -18,6 +18,6 @@ Output Type Distribution:
   Long: 53 (53.0%)
 
 Benchmark:
-Total time: 2803.16s
+Total time: 2792.19s
 Throughput: 0.04 queries/sec
-Token throughput: 119.9 tokens/sec
+Token throughput: 120.4 tokens/sec

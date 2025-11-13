@@ -1,11 +1,10 @@
 #!/bin/bash
-# filepath: /home/banwari/llm_energy/api_energy/run_model_api_all.sh
+# filepath: /home/banwari/llm_energy/LLM-Energy/api_energy/run_model_api_all.sh
 
 # Define all API models (corresponding to open-source models)
 API_MODELS=(
     "open-mistral-7b"
     "open-mistral-nemo"
-    "pixtral-12b-2409"
 )
 
 #API_MODELS=(
@@ -17,7 +16,7 @@ API_MODELS=(
 #)
 
 # Mistral API key
-API_KEY="your_mistral_key"
+API_KEY="Mistral_API_Key"
 
 # CSV file path
 CSV_PATH="/netscratch/banwari/api_gpu/synthetic_prompts.csv"
@@ -28,7 +27,7 @@ TEMPERATURE=0.7
 SEED=42
 
 # Number of runs per model
-NUM_RUNS=5
+NUM_RUNS=10
 
 # Create output directory
 OUTPUT_DIR="$(pwd)/results_api"
@@ -37,6 +36,9 @@ mkdir -p "$OUTPUT_DIR"
 # Log file for all jobs
 LOG_FILE="$OUTPUT_DIR/all_api_jobs.log"
 echo "Starting API job submission at $(date)" > "$LOG_FILE"
+echo "Models: ${API_MODELS[@]}" >> "$LOG_FILE"
+echo "Runs per model: $NUM_RUNS" >> "$LOG_FILE"
+echo "" >> "$LOG_FILE"
 
 # Counter for total jobs
 TOTAL_JOBS=0
@@ -51,7 +53,7 @@ for model in "${API_MODELS[@]}"; do
         TOTAL_JOBS=$((TOTAL_JOBS + 1))
         
         # Create unique job name
-        job_name="${model_name}_api_run${run}"
+        job_name="${model_name}_paid_api_run${run}"
         
         # Output files
         out_file="$OUTPUT_DIR/${job_name}_%j.out"
@@ -60,7 +62,7 @@ for model in "${API_MODELS[@]}"; do
         
         echo "Submitting job $TOTAL_JOBS: $job_name" | tee -a "$LOG_FILE"
         
-        # Submit job (no GPU needed for API calls)
+        # Submit job immediately (no delay)
         srun -K \
           --output="$out_file" \
           --error="$err_file" \
@@ -81,18 +83,13 @@ for model in "${API_MODELS[@]}"; do
                      --api_key $API_KEY \
                      --temperature $TEMPERATURE \
                      --max_samples $MAX_SAMPLES \
+                     --seed $((SEED + run)) \
                      --out_csv $csv_out" &
         
         SUBMITTED_JOBS=$((SUBMITTED_JOBS + 1))
         
-        # Add a small delay to avoid overwhelming the scheduler
+        # Small delay to avoid overwhelming the scheduler
         sleep 2
-        
-        # Optional: limit concurrent submissions
-        if [ $((SUBMITTED_JOBS % 5)) -eq 0 ]; then
-            echo "Submitted $SUBMITTED_JOBS jobs, pausing for 5 seconds..." | tee -a "$LOG_FILE"
-            sleep 5
-        fi
     done
 done
 
@@ -102,6 +99,14 @@ wait
 echo "" | tee -a "$LOG_FILE"
 echo "All $TOTAL_JOBS API jobs submitted at $(date)" | tee -a "$LOG_FILE"
 echo "Results will be saved to: $OUTPUT_DIR" | tee -a "$LOG_FILE"
-echo "" | tee -a "$LOG_FILE"
-echo "To monitor jobs, run: squeue -u $USER" | tee -a "$LOG_FILE"
-echo "To check results: ls -lh $OUTPUT_DIR/*.csv" | tee -a "$LOG_FILE"
+echo "" >> "$LOG_FILE"
+echo "Job Submission Summary:" | tee -a "$LOG_FILE"
+echo "  Total jobs submitted: $TOTAL_JOBS" | tee -a "$LOG_FILE"
+echo "  All jobs started immediately" | tee -a "$LOG_FILE"
+echo "  Expected runtime per job: ~3 hours max" | tee -a "$LOG_FILE"
+echo "" >> "$LOG_FILE"
+echo "To monitor jobs:" | tee -a "$LOG_FILE"
+echo "  squeue -u $USER | grep mistral" | tee -a "$LOG_FILE"
+echo "" >> "$LOG_FILE"
+echo "To check results:" | tee -a "$LOG_FILE"
+echo "  ls -lh $OUTPUT_DIR/*.csv" | tee -a "$LOG_FILE"

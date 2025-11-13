@@ -201,7 +201,7 @@ def validate_prompts_with_groq(client: Groq, model: str, csv_file: str, sample_s
 
 def main():
     parser = argparse.ArgumentParser(description="Generate synthetic prompts for LLM benchmarking")
-    parser.add_argument("--groq_api_key", type=str, default="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",
+    parser.add_argument("--groq_api_key", type=str, default="Groq_API_Key",
                         help="Groq API key (or set GROQ_API_KEY env var)")
     parser.add_argument("--model", type=str, default="llama3-70b-8192",
                         help="Groq model to use (default: llama3-70b-8192)")

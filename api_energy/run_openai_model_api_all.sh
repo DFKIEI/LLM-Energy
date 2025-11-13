@@ -27,7 +27,7 @@ TEMPERATURE=0.7
 SEED=42
 
 # Number of runs per model
-NUM_RUNS=5
+NUM_RUNS=10
 
 # Create output directory
 OUTPUT_DIR="$(pwd)/results_openai_api"
@@ -46,7 +46,7 @@ for model in "${OPENAI_MODELS[@]}"; do
     # Extract clean model name for filenames
     model_name=$(echo "$model" | sed 's/[^a-zA-Z0-9._-]/_/g')
     
-    for run in $(seq 2 $NUM_RUNS); do
+    for run in $(seq 6 $NUM_RUNS); do
         TOTAL_JOBS=$((TOTAL_JOBS + 1))
         
         # Create unique job name

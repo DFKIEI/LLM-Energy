@@ -66,12 +66,18 @@ def load_model(model_name: str, dtype: str = "fp16", token: str = None):
     # Set padding side to left for batch generation
     tokenizer.padding_side = "left"
 
+    quantization_config = Bits(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.bfloat16
+    )
+
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         torch_dtype=torch_dtype,
         device_map="auto",
-        low_cpu_mem_usage=True,
+        attn_implementation="flash_attention_2",
         token=token,
+        trust_remote_code=True,
     )
     model.eval()
     
@@ -141,18 +147,41 @@ def generate_batch_parallel(model, tokenizer, prompts: List[str], max_input_toke
     # Move to GPU
     inputs = {k: v.to(model.device) for k, v in inputs.items()}
     
+    # Check if model needs special handling (Llama Guard 4)
+    needs_attention_chunk = hasattr(model.config, 'model_type') and 'llama4' in str(model.config.model_type).lower()
+    
     # Generate with batching
     with torch.no_grad():
         with torch.cuda.amp.autocast():
-            outputs = model.generate(
-                **inputs,
-                do_sample=False,  # Greedy decoding
-                max_new_tokens=max_new_tokens,
-                pad_token_id=tokenizer.pad_token_id,
-                eos_token_id=tokenizer.eos_token_id,
-                use_cache=True,
-                num_beams=1,
-            )
+            try:
+                # Standard generation for other models
+                outputs = model.generate(
+                    **inputs,
+                    do_sample=False,  # Greedy decoding
+                    max_new_tokens=max_new_tokens,
+                    pad_token_id=tokenizer.pad_token_id,
+                    eos_token_id=tokenizer.eos_token_id,
+                    use_cache=True,
+                    num_beams=1,
+                )
+            except (TypeError, ValueError, AttributeError) as e:
+                # Ultimate fallback: simplest possible generation
+                print(f"Warning: Standard generation failed ({type(e).__name__}: {e})")
+                print("Retrying with minimal configuration...")
+                
+                # Set attention_chunk_size if it's the issue
+                if 'attention_chunk_size' in str(e):
+                    model.config.attention_chunk_size = 512
+                
+                outputs = model.generate(
+                    **inputs,
+                    max_new_tokens=max_new_tokens,
+                    pad_token_id=tokenizer.pad_token_id,
+                    eos_token_id=tokenizer.eos_token_id,
+                    do_sample=False,
+                    use_cache=False,
+                    num_beams=1,
+                )
     
     # Decode only the new tokens for each sequence
     responses = []
@@ -223,7 +252,7 @@ def group_by_length_params(queries_data: List[dict], text_col: str,
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run Mistral models efficiently over a CSV of queries.")
+    parser = argparse.ArgumentParser(description="Run Llama models efficiently over a CSV of queries.")
     parser.add_argument("--model", type=str, required=True,
                         help="HF model id or local path")
     parser.add_argument("--csv", type=str, required=True,
@@ -234,7 +263,7 @@ def main():
                         help='CSV column for query type: "short" | "long"')
     parser.add_argument("--output_type_col", type=str, default="output_type",
                         help='CSV column for output type: "short" | "long"')
-    parser.add_argument("--out_csv", type=str, default="mistral_outputs.csv",
+    parser.add_argument("--out_csv", type=str, default="llama_outputs.csv",
                         help="Where to save outputs (CSV)")
     parser.add_argument("--hf_token", type=str, default=os.environ.get("HF_TOKEN", ""),
                         help="HF access token for gated models")

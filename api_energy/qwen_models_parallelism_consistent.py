@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# filepath: /home/banwari/llm_energy/LLM-Energy/api_energy/qwen_models_parallelism_consistent.py
 
 import argparse
 import csv
@@ -10,7 +11,7 @@ import numpy as np
 from typing import List, Tuple
 
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
 
 #################################### Import carbontracker and apply the fix
@@ -55,16 +56,23 @@ def set_all_seeds(seed):
     print(f"✓ Set all seeds to {seed} for reproducibility")
 
 
-def load_model(model_name: str, dtype: str = "fp16", token: str = None):
-    """Load model with optimizations for GPU efficiency."""
+def load_model(model_name: str, dtype: str = "bf16", token: str = None):
+    """Load Qwen model with optimizations for GPU efficiency."""
     torch_dtype = {"fp16": torch.float16, "bf16": torch.bfloat16, "fp32": torch.float32}[dtype]
     print(f"Loading model: {model_name} [{dtype}]")
     
-    tokenizer = AutoTokenizer.from_pretrained(model_name, token=token)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, token=token, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     # Set padding side to left for batch generation
     tokenizer.padding_side = "left"
+
+    quantization_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+    )
 
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
@@ -72,6 +80,9 @@ def load_model(model_name: str, dtype: str = "fp16", token: str = None):
         device_map="auto",
         low_cpu_mem_usage=True,
         token=token,
+        trust_remote_code=True,
+        attn_implementation="flash_attention_2",
+        quantization_config=quantization_config
     )
     model.eval()
     
@@ -141,18 +152,32 @@ def generate_batch_parallel(model, tokenizer, prompts: List[str], max_input_toke
     # Move to GPU
     inputs = {k: v.to(model.device) for k, v in inputs.items()}
     
-    # Generate with batching
+    # Generate with batching - Qwen models work well with standard generation
     with torch.no_grad():
         with torch.cuda.amp.autocast():
-            outputs = model.generate(
-                **inputs,
-                do_sample=False,  # Greedy decoding
-                max_new_tokens=max_new_tokens,
-                pad_token_id=tokenizer.pad_token_id,
-                eos_token_id=tokenizer.eos_token_id,
-                use_cache=True,
-                num_beams=1,
-            )
+            try:
+                # Try standard generation first
+                outputs = model.generate(
+                    **inputs,
+                    do_sample=False,  # Greedy decoding for deterministic outputs
+                    max_new_tokens=max_new_tokens,
+                    pad_token_id=tokenizer.pad_token_id,
+                    eos_token_id=tokenizer.eos_token_id,
+                    use_cache=True,
+                    num_beams=1,
+                )
+            except (TypeError, ValueError, RuntimeError) as e:
+                # Fallback without cache if needed
+                print(f"Warning: Standard generation failed ({type(e).__name__}), retrying without cache...")
+                outputs = model.generate(
+                    **inputs,
+                    do_sample=False,
+                    max_new_tokens=max_new_tokens,
+                    pad_token_id=tokenizer.pad_token_id,
+                    eos_token_id=tokenizer.eos_token_id,
+                    use_cache=False,
+                    num_beams=1,
+                )
     
     # Decode only the new tokens for each sequence
     responses = []
@@ -223,9 +248,9 @@ def group_by_length_params(queries_data: List[dict], text_col: str,
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run Mistral models efficiently over a CSV of queries.")
+    parser = argparse.ArgumentParser(description="Run Qwen models efficiently over a CSV of queries.")
     parser.add_argument("--model", type=str, required=True,
-                        help="HF model id or local path")
+                        help="HF model id or local path (e.g., Qwen/Qwen3-32B)")
     parser.add_argument("--csv", type=str, required=True,
                         help="Path to CSV file with queries")
     parser.add_argument("--text_col", type=str, default="query",
@@ -234,7 +259,7 @@ def main():
                         help='CSV column for query type: "short" | "long"')
     parser.add_argument("--output_type_col", type=str, default="output_type",
                         help='CSV column for output type: "short" | "long"')
-    parser.add_argument("--out_csv", type=str, default="mistral_outputs.csv",
+    parser.add_argument("--out_csv", type=str, default="qwen_outputs.csv",
                         help="Where to save outputs (CSV)")
     parser.add_argument("--hf_token", type=str, default=os.environ.get("HF_TOKEN", ""),
                         help="HF access token for gated models")
@@ -252,9 +277,10 @@ def main():
     parser.add_argument("--repetition_penalty", type=float, default=1.05)
 
     # Efficiency knobs
-    parser.add_argument("--batch_size", type=int, default=8,
-                        help="Batch size for parallel generation (adjust based on GPU memory)")
-    parser.add_argument("--dtype", type=str, default="fp16", choices=["fp16", "bf16", "fp32"])
+    parser.add_argument("--batch_size", type=int, default=4,
+                        help="Batch size (Qwen3-32B needs smaller batches due to size)")
+    parser.add_argument("--dtype", type=str, default="bf16", choices=["fp16", "bf16", "fp32"],
+                        help="Data type (bf16 recommended for Qwen models)")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--max_samples", type=int, default=None,
                         help="Maximum number of samples to process")
@@ -298,19 +324,17 @@ def main():
         all_queries_data = all_queries_data[args.skip_samples:]
         print(f"Skipped first {args.skip_samples} samples")
     
-    # Don't use random sampling - take first N queries like API does
-    if args.max_samples is not None:
-        queries_data = all_queries_data[:args.max_samples]
-        print(f"✓ Processing first {len(queries_data)} queries (deterministic)")
+    # Use seeded sampling to get consistent subset across runs
+    if args.max_samples is not None and args.max_samples < len(all_queries_data):
+        random.seed(args.seed)  # Use same seed for reproducible sampling!
+        queries_data = random.sample(all_queries_data, args.max_samples)
+        print(f"✓ Sampled {len(queries_data)} queries using seed={args.seed}")
     else:
         queries_data = all_queries_data
         print(f"✓ Processing all {len(queries_data)} queries")
 
-    # Seed still used for generation, not query selection
-    set_all_seeds(args.seed)
-
     print(f"\nProcessing with batch size {args.batch_size}")
-    print(f"Optimizations: TF32, Mixed Precision, KV Cache, Parallel Batching")
+    print(f"Optimizations: TF32, Mixed Precision (bf16), KV Cache, Parallel Batching")
 
     # Group queries by length parameters for efficient batching
     print("\nGrouping queries by length parameters for optimal batching...")
@@ -326,7 +350,7 @@ def main():
 
     # Initialize carbon tracker
     if CARBONTRACKER_AVAILABLE:
-        tracker = CarbonTracker(epochs=1, components="gpu")
+        tracker = CarbonTracker(epochs=1)
         tracker.epoch_start()
     else:
         tracker = None
@@ -343,15 +367,26 @@ def main():
     start_time = time.time()
     
     for group_idx, ((max_in, max_out), group_items) in enumerate(query_groups.items()):
+        # Adaptive batch size based on total sequence length
+        total_seq_len = max_in + max_out
+        
+        if total_seq_len > 14000:  # Very long (8K+8K)
+            effective_batch_size = max(1, args.batch_size // 4)
+        elif total_seq_len > 10000:  # Long (8K+2K or 2K+8K)
+            effective_batch_size = max(1, args.batch_size // 2)
+        else:  # Short (2K+2K)
+            effective_batch_size = args.batch_size * 2
+        
         print(f"\n{'='*70}")
         print(f"Group {group_idx+1}/{len(query_groups)}: {max_in} in → {max_out} out ({len(group_items)} queries)")
+        print(f"Adaptive batch size: {effective_batch_size} (base: {args.batch_size}, seq_len: {total_seq_len})")
         print(f"{'='*70}")
         
         group_start = time.time()
         
-        # Process this group in batches
-        for batch_start in range(0, len(group_items), args.batch_size):
-            batch_end = min(batch_start + args.batch_size, len(group_items))
+        # Process this group in batches with adaptive batch size
+        for batch_start in range(0, len(group_items), effective_batch_size):  # Use effective_batch_size
+            batch_end = min(batch_start + effective_batch_size, len(group_items))
             batch_items = group_items[batch_start:batch_end]
             
             # Extract queries for this batch

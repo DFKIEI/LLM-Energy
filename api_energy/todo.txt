@@ -18,3 +18,26 @@ track the amount of inputs, output and total tokens for both local and API model
 -----------------------------------------
 
 and figure out the tokenizers used(API)
+
+------------------------------------------
+
+API calls every 30 mins for 1 week(unpaid and paid mistral) block 1 job only
+API jobs for mistral paid
+
+------------------
+
+broader overview of the script - datasets and models and process - the experiment protocol (bullet points) carbon tracker - epoch wise tracking rather prompt tracking
+ just a short paragraph - quarter page
+
+ system prompt, temperature, hyperparameters
+
+ explanation of code
+
+
+ ----------------------------
+
+ try multi-gpu
+
+ split model files on different gpus(check with huggingface)
+
+ explore the parameters
