@@ -11,7 +11,7 @@ GPUS=(
 
 GPUS_PER_JOB=4
 NUM_RUNS=1
-HF_TOKEN="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"
+HF_TOKEN="HF_TOKEN"
 CSV_PATH="/netscratch/banwari/api_gpu/synthetic_prompts.csv"
 
 MAX_SAMPLES=100
