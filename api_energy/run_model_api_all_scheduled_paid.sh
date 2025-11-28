@@ -6,7 +6,7 @@ API_MODELS=(
     "open-mistral-nemo"
 )
 
-API_KEY="Mistral_Paid_API_Key"
+API_KEY="h1ddgOuriEC1SITyXUrJivpka88InkXF"
 CSV_PATH="/netscratch/banwari/api_gpu/synthetic_prompts.csv"
 MAX_SAMPLES=100
 TEMPERATURE=0.7
@@ -22,7 +22,7 @@ echo "Starting scheduled API jobs at $(date)" > "$LOG_FILE"
 
 for model in "${API_MODELS[@]}"; do
     model_name=$(echo "$model" | sed 's/[^a-zA-Z0-9._-]/_/g')
-    job_name="${model_name}_scheduled_paid"
+    job_name="${model_name}_scheduled_paid3"
     
     out_file="$OUTPUT_DIR/${job_name}_%j.out"
     err_file="$OUTPUT_DIR/${job_name}_%j.err"
