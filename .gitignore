@@ -210,6 +210,3 @@ __marimo__/
 *.err
 *.out
 *.txt
-*.csv
-*.jsonl
-*.json
