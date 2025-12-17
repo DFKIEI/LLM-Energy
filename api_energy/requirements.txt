@@ -1,6 +1,8 @@
 transformers>=4.40.0
 accelerate>=0.30.0
+deepspeed
 sentencepiece>=0.1.99
+protobuf
 safetensors>=0.4.2
 einops>=0.7.0
 huggingface_hub>=0.23.0
@@ -9,3 +11,5 @@ carbontracker
 mistralai
 groq>=0.4.0
 openai
+vllm
+numpy<2.0.0

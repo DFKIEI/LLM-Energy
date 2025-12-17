@@ -1,9 +1,0 @@
-Job 2226292: Running on node(s) kersey
-Job 2226292: Started at 2025-10-16 00:54:42+0200
-Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2226292&from=1760568882000
-Job 2226292: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
-Job 2226292: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh took 65.5 seconds
-WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-slurmstepd: error: *** STEP 2226292.0 ON kersey CANCELLED AT 2025-10-16T00:56:29 ***
-ERROR: Could not install packages due to an OSError: [Errno 2] No such file or directory: '/usr/local/lib/python3.10/dist-packages/google_auth-2.27.0.dist-info/METADATA'
-

@@ -1,0 +1,4 @@
+base_model,api_total_tokens,api_queries,api_avg_tokens,api_model_name,api_runs,local_total_tokens,local_queries,local_avg_tokens,local_model_name,local_runs,token_diff_%,token_diff_absolute
+llama,3491383,2711,1269.597388837454,llama-3.1-8b-instant,30,13308108.0,3000.0,4436.05,Llama-3.1-8B,30.0,-71.38,-3166.45
+mistral-7b,5703942,3999,1426.4120176767678,open-mistral-7b-paid,40,80308440.0,24000.0,3346.1625,Mistral-Nemo-Base-2407,240.0,-57.37,-1919.75
+pixtral-2409,1573874,1000,1573.874,pixtral-12b-2409,10,,,,,,,

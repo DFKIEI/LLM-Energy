@@ -1,7 +1,0 @@
-Job 2223751: Running on node(s) kusel
-Job 2223751: Started at 2025-10-14 17:48:29+0200
-Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2223751&from=1760456909000
-Job 2223751: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
-Job 2223751: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh took 29.8 seconds
-WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-ERROR: Could not open requirements file: [Errno 2] No such file or directory: '/home/banwari/llm_energy/api_energy/requirements.txt'

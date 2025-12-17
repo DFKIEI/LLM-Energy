@@ -1,15 +1,0 @@
-Job 2224214: Running on node(s) serv-9219
-Job 2224214: Started at 2025-10-15 01:53:17+0200
-Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2224214&from=1760485997000
-Job 2224214: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
-Job 2224214: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh took 19.5 seconds
-WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /index/carbontracker/
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /index/distro/
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /index/sniffio/
-WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
-`torch_dtype` is deprecated! Use `dtype` instead!
-Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  20%|██        | 1/5 [22:28<1:29:55, 1348.89s/it]Fetching 5 files:  60%|██████    | 3/5 [25:05<13:35, 407.81s/it]   Fetching 5 files: 100%|██████████| 5/5 [25:57<00:00, 211.44s/it]Fetching 5 files: 100%|██████████| 5/5 [25:57<00:00, 311.50s/it]
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:03,  1.11it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:01<00:02,  1.10it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:02<00:01,  1.10it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:03<00:00,  1.10it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:04<00:00,  1.10it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:04<00:00,  1.10it/s]
-'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /mistralai/Mistral-Nemo-Base-2407/resolve/main/generation_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7738d10c84f0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 0ed4d955-b7c8-4679-95c6-3db2452ccf89)')' thrown while requesting HEAD https://huggingface.co/mistralai/Mistral-Nemo-Base-2407/resolve/main/generation_config.json
-Retrying in 1s [Retry 1/5].

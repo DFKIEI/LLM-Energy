@@ -1,0 +1,91 @@
+{
+  "total_files": 350,
+  "total_queries": 34710,
+  "total_input_tokens": 2949651,
+  "total_output_tokens": 101436096,
+  "total_tokens": 104385747,
+  "by_type": {
+    "API": {
+      "files": 80,
+      "queries": 7710,
+      "input_tokens": 709218,
+      "output_tokens": 10059981,
+      "total_tokens": 10769199
+    },
+    "Local": {
+      "files": 270,
+      "queries": 27000,
+      "input_tokens": 2240433,
+      "output_tokens": 91376115,
+      "total_tokens": 93616548
+    }
+  },
+  "by_model": {
+    "Llama-3.1-8B": {
+      "queries": 3000,
+      "input_tokens": 243633,
+      "output_tokens": 13064475,
+      "total_tokens": 13308108
+    },
+    "Mistral-7B-Instruct-v0.3": {
+      "queries": 6000,
+      "input_tokens": 523380,
+      "output_tokens": 17893410,
+      "total_tokens": 18416790
+    },
+    "Mistral-7B-v0.3": {
+      "queries": 6000,
+      "input_tokens": 523380,
+      "output_tokens": 23241480,
+      "total_tokens": 23764860
+    },
+    "Mistral-Nemo-Base-2407": {
+      "queries": 6000,
+      "input_tokens": 475020,
+      "output_tokens": 17785620,
+      "total_tokens": 18260640
+    },
+    "Mistral-Nemo-Instruct-2407": {
+      "queries": 6000,
+      "input_tokens": 475020,
+      "output_tokens": 19391130,
+      "total_tokens": 19866150
+    },
+    "llama-3.1-8b-instant": {
+      "queries": 2711,
+      "input_tokens": 287378,
+      "output_tokens": 3204005,
+      "total_tokens": 3491383
+    },
+    "open-mistral-7b": {
+      "queries": 1000,
+      "input_tokens": 89230,
+      "output_tokens": 1023495,
+      "total_tokens": 1112725
+    },
+    "open-mistral-7b-paid": {
+      "queries": 1000,
+      "input_tokens": 89230,
+      "output_tokens": 1019592,
+      "total_tokens": 1108822
+    },
+    "open-mistral-nemo": {
+      "queries": 999,
+      "input_tokens": 81040,
+      "output_tokens": 1656390,
+      "total_tokens": 1737430
+    },
+    "open-mistral-nemo-paid": {
+      "queries": 1000,
+      "input_tokens": 81170,
+      "output_tokens": 1663795,
+      "total_tokens": 1744965
+    },
+    "pixtral-12b-2409": {
+      "queries": 1000,
+      "input_tokens": 81170,
+      "output_tokens": 1492704,
+      "total_tokens": 1573874
+    }
+  }
+}

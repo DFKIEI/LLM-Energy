@@ -1,10 +1,0 @@
-Job 2224144: Running on node(s) serv-3340
-Job 2224144: Started at 2025-10-14 22:52:40+0200
-Monitor this job here: http://monitoring.pegasus.kl.dfki.de/d/slurm-job-details/job-details?var-jobid=2224144&from=1760475160000
-Job 2224144: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh
-Job 2224144: creating container for /enroot/nvcr.io_nvidia_pytorch_24.02-py3.sqsh took 13.8 seconds
-WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
-`torch_dtype` is deprecated! Use `dtype` instead!
-Fetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]Fetching 3 files:  33%|███▎      | 1/3 [19:52<39:44, 1192.28s/it]Fetching 3 files: 100%|██████████| 3/3 [19:52<00:00, 397.43s/it] 
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.21it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.22it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:02<00:00,  1.28it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:02<00:00,  1.27it/s]

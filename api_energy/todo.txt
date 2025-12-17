@@ -57,6 +57,7 @@ broader overview of the script - datasets and models and process - the experimen
 
  -----------------
 
- more codes and dynamic codes
- results with all the combinations of dataset orders
- more metrics(reconstruction and forgetting) or results and visualizations
+multi gpu - layerwise and tensorwise
+bigger models
+2 gpus - 4 gpus
+api jobs on machine
